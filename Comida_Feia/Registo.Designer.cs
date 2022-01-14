@@ -1,5 +1,5 @@
 ﻿
-namespace ComidaFeia
+namespace Comida_Feia
 {
     partial class Registo
     {
@@ -99,7 +99,6 @@ namespace ComidaFeia
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(241, 36);
             this.textBox2.TabIndex = 9;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox1
             // 
@@ -278,7 +277,7 @@ namespace ComidaFeia
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(583, 649);
+            this.ClientSize = new System.Drawing.Size(583, 791);
             this.ControlBox = false;
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
@@ -306,7 +305,6 @@ namespace ComidaFeia
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.Registo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

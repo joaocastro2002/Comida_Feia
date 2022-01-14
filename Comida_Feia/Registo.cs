@@ -3,11 +3,11 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
-namespace ComidaFeia
+namespace Comida_Feia
 {
     public partial class Registo : Form
     {
-        /*
+        
         public Registo()
         {
             InitializeComponent();
@@ -15,9 +15,9 @@ namespace ComidaFeia
             TipoC();
             textBox1.Text = NovoUser().ToString();
         }
-        */
+        
 
-        /*
+        
         #region ID automático
         /// <summary>
         /// Função que irá contar o número de produtos existentes na base de dados
@@ -28,7 +28,7 @@ namespace ComidaFeia
             int total = 0;
             string query = "Select UID from Utilizador";
 
-            /*
+            
             using (SqlConnection con = new SqlConnection(conexao.comando))
             {
                 con.Open();
@@ -53,7 +53,7 @@ namespace ComidaFeia
         }
         
         #endregion
-        */
+        
 
         #region Funções das caixas de texto
 
@@ -207,7 +207,7 @@ namespace ComidaFeia
             string campos_Contacto = "numero,Tipo_ContactoTCID,UtilizadorUID";
             string valores_Contacto = contacto + p + tipo + p + UID;
 
-            /*
+            
             // Verificar se as Passwords são iguais
             if (textBox2.Text == textBox3.Text)
             {
@@ -367,7 +367,7 @@ namespace ComidaFeia
             {
                 MessageBox.Show("As palavras passes não coicidem!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            */
+            
         }
 
         #region Botões
@@ -379,8 +379,8 @@ namespace ComidaFeia
         private void cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-            var Form1 = new Form1();
-            Form1.Show();
+           // var Form1 = new Form1();
+            //Form1.Show();
         }
 
 
@@ -396,7 +396,7 @@ namespace ComidaFeia
 
         #endregion
 
-        /*
+        
         #region Funções Determinantes
 
         /// <summary>
@@ -530,18 +530,8 @@ namespace ComidaFeia
             
         }       
         #endregion
-        */
         
-
-        private void Registo_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
 

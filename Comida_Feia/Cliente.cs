@@ -10,18 +10,17 @@ namespace ComidaFeia
         public Cliente()
         {
             InitializeComponent();
-            //TipoP();
-            //Estado();
-            //Anos();
-            //Mes();
-            //Listagem();
-           // textBox1.Text = Global_Var.UID_G;
+            TipoP();
+            Estado();
+            Anos();
+            Mes();
+            Listagem();
+            //textBox1.Text = Global_Var.UID_G;
 
         }
 
         #region Pedido
 
-        /*
         /// <summary>
         /// Função que coloca os tipos de produtos numa combobox
         /// </summary>
@@ -96,7 +95,6 @@ namespace ComidaFeia
             {
                 MessageBox.Show("Erro interno da aplicação.\nErro: " + err.Message + "\n\nSe problema persistir informe administrador de sistema.", "Erro da aplicação", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
-
         }
 
 
@@ -637,7 +635,10 @@ namespace ComidaFeia
         {
 
         }
-        */
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
-

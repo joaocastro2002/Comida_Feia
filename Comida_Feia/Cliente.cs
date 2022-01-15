@@ -27,7 +27,6 @@ namespace ComidaFeia
         private void TipoP()
         {
             string querytype = "Select descTProd from Tipo_Prod";
-            /*
             try
             {
                 using (SqlConnection con = new SqlConnection(conexao.comando))
@@ -54,7 +53,6 @@ namespace ComidaFeia
             {
                 MessageBox.Show("Erro interno da aplicação.\nErro: " + err.Message + "\n\nSe problema persistir informe administrador de sistema.", "Erro da aplicação", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
-            */
         }
 
 
@@ -71,7 +69,6 @@ namespace ComidaFeia
             {
                 querytype += "Where descTProd= '" + comboBox3.SelectedItem + "'"; ;
             }
-            /*
             try
             {
                 using (SqlConnection con = new SqlConnection(conexao.comando))
@@ -98,8 +95,6 @@ namespace ComidaFeia
             {
                 MessageBox.Show("Erro interno da aplicação.\nErro: " + err.Message + "\n\nSe problema persistir informe administrador de sistema.", "Erro da aplicação", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
-            */
-
         }
 
 
@@ -116,7 +111,6 @@ namespace ComidaFeia
             {
                 querytype += " WHERE descTProd='" + this.comboBox3.SelectedItem + "' AND descEst= '" + comboBox4.SelectedItem + "'";
             }
-            /*
             try
             {
                 using (SqlConnection con = new SqlConnection(conexao.comando))
@@ -143,7 +137,6 @@ namespace ComidaFeia
             {
                 MessageBox.Show("Erro interno da aplicação.\nErro: " + err.Message + "\n\nSe problema persistir informe administrador de sistema.", "Erro da aplicação", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
-            */
         }
 
         #endregion
@@ -204,7 +197,6 @@ namespace ComidaFeia
                 DataRow row = null;
                 dTable.Rows.Clear();
 
-                /*
                 using (SqlConnection con = new SqlConnection(conexao.comando))
                 {
                     using (SqlCommand cmd = new SqlCommand(query, con))
@@ -249,7 +241,6 @@ namespace ComidaFeia
                         }
                     }
                 }
-                */
             }
             catch (Exception err)
             {
@@ -272,7 +263,6 @@ namespace ComidaFeia
                 DataRow row = null;
                 dTable.Rows.Clear();
 
-                /*
                 using (SqlConnection con = new SqlConnection(conexao.comando))
                 {
                     using (SqlCommand cmd = new SqlCommand(query, con))
@@ -317,7 +307,6 @@ namespace ComidaFeia
                         }
                     }
                 }
-                */
             }
             catch (Exception err)
             {

@@ -37,7 +37,6 @@ namespace ComidaFeia
         private void DadosComb()
         {
             string querytype = "Select descTP from Tipo_Utilizador";
-            /*
             try
             {
                 using (SqlConnection con = new SqlConnection(conexao.comando))
@@ -64,7 +63,6 @@ namespace ComidaFeia
             {
                 MessageBox.Show("Erro interno da aplicação.\nErro: " + err.Message + "\n\nSe problema persistir informe administrador de sistema.", "Erro da aplicação", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
-            */
         }
 
 
@@ -80,12 +78,11 @@ namespace ComidaFeia
                 "JOIN Tipo_Utilizador on Utilizador.Tipo_UtilizadorTUID=Tipo_Utilizador.TUID " +
                 "WHERE UID= '" + textBox1.Text + "' And password= '" + textBox2.Text + "' And descTP= '" + comboBox1.Text + "' GROUP BY UID";
 
-            //Global_Var.UID_G = textBox1.Text;
+            Global_Var.UID_G = textBox1.Text;
 
-            /*
+
             try
             {
-                
                 using (SqlConnection con = new SqlConnection(conexao.comando))
                 {
                     using (SqlCommand cmd = new SqlCommand(querylogin, con))
@@ -136,8 +133,6 @@ namespace ComidaFeia
             {
                 MessageBox.Show("Erro interno da aplicação.\nErro: " + err.Message + "\n\nSe problema persistir informe administrador de sistema.", "Erro da aplicação", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
-            */
-                
         }
 
         /// <summary>
@@ -147,8 +142,8 @@ namespace ComidaFeia
         /// <param name="e"></param>
         private void registar_Click(object sender, EventArgs e)
         {
-            //var Registo = new Registo();
-            //Registo.Show();
+            var Registo = new Registo();
+            Registo.Show();
         }
 
         /// <summary>
@@ -167,4 +162,3 @@ namespace ComidaFeia
         }
     }
 }
-

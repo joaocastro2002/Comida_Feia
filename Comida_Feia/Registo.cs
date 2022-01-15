@@ -3,11 +3,10 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
-namespace Comida_Feia
+namespace ComidaFeia
 {
     public partial class Registo : Form
     {
-        
         public Registo()
         {
             InitializeComponent();
@@ -15,9 +14,7 @@ namespace Comida_Feia
             TipoC();
             textBox1.Text = NovoUser().ToString();
         }
-        
 
-        
         #region ID automático
         /// <summary>
         /// Função que irá contar o número de produtos existentes na base de dados
@@ -28,7 +25,6 @@ namespace Comida_Feia
             int total = 0;
             string query = "Select UID from Utilizador";
 
-            
             using (SqlConnection con = new SqlConnection(conexao.comando))
             {
                 con.Open();
@@ -49,11 +45,8 @@ namespace Comida_Feia
                 }
             }
             return total + 1;
-            
         }
-        
         #endregion
-        
 
         #region Funções das caixas de texto
 
@@ -65,7 +58,6 @@ namespace Comida_Feia
             string querytype = "Select * from Tipo_Utilizador";
             Dictionary<int, string> comboSource = new Dictionary<int, string>();
             comboSource.Add(0, "Selecionar Opção");
-            /*
             try
             {
                 using (SqlConnection con = new SqlConnection(conexao.comando))
@@ -96,7 +88,6 @@ namespace Comida_Feia
             {
                 MessageBox.Show("Erro interno da aplicação.\nErro: " + err.Message + "\n\nSe problema persistir informe administrador de sistema.", "Erro da aplicação", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
-            */
 
         }
 
@@ -122,7 +113,6 @@ namespace Comida_Feia
             Dictionary<int, string> comboSource = new Dictionary<int, string>();
             comboSource.Add(0, "Selecionar Opção");
 
-            /*
             try
             {
                 using (SqlConnection con = new SqlConnection(conexao.comando))
@@ -152,7 +142,6 @@ namespace Comida_Feia
             {
                 MessageBox.Show("Erro interno da aplicação.\nErro: " + err.Message + "\n\nSe problema persistir informe administrador de sistema.", "Erro da aplicação", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
-            */
 
         }
 
@@ -178,21 +167,21 @@ namespace Comida_Feia
             tpCont = comboBox2.SelectedValue.ToString();
             contacto = textBox7.Text;
             string descCli = "Instituição";
-            //CPID = Global_Var.CP_G;
+            CPID = Global_Var.CP_G;
 
             // Verificar se o CPID existe através da localidade
             // Verificar se a rua da Morada existe
-            
-             //* Ordem de Guardar
-             //* 
-             //* 1- CP -> Feito
-             //* 2- Morada -> Feito
-             //* 3- Utilizador (passsword, TipoUtilizadorUID, MID) -> Feito
-             //* 4- Cliente / Fornecedor -> Feito 
-             //* 5- Contacto -> Feito
-             //* 
-             //* Função NovoUser vai criar o novo id de utilizador
-             
+            /*
+             * Ordem de Guardar
+             * 
+             * 1- CP -> Feito
+             * 2- Morada -> Feito
+             * 3- Utilizador (passsword, TipoUtilizadorUID, MID) -> Feito
+             * 4- Cliente / Fornecedor -> Feito 
+             * 5- Contacto -> Feito
+             * 
+             * Função NovoUser vai criar o novo id de utilizador
+             */
 
 
             string campos_CP = "localidade";
@@ -207,7 +196,7 @@ namespace Comida_Feia
             string campos_Contacto = "numero,Tipo_ContactoTCID,UtilizadorUID";
             string valores_Contacto = contacto + p + tipo + p + UID;
 
-            
+
             // Verificar se as Passwords são iguais
             if (textBox2.Text == textBox3.Text)
             {
@@ -367,7 +356,7 @@ namespace Comida_Feia
             {
                 MessageBox.Show("As palavras passes não coicidem!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            
+
         }
 
         #region Botões
@@ -379,8 +368,8 @@ namespace Comida_Feia
         private void cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-           // var Form1 = new Form1();
-            //Form1.Show();
+            var Form1 = new Form1();
+            Form1.Show();
         }
 
 
@@ -396,7 +385,6 @@ namespace Comida_Feia
 
         #endregion
 
-        
         #region Funções Determinantes
 
         /// <summary>
@@ -408,7 +396,6 @@ namespace Comida_Feia
         {
             string query = "SELECT CPID FROM CP WHERE localidade='" + textBox6.Text + "'";
 
-            
             using (SqlConnection con = new SqlConnection(conexao.comando))
             {
                 con.Open();
@@ -494,7 +481,7 @@ namespace Comida_Feia
                     con.Close();
                 }
             }
-            return CP;           
+            return CP;
         }
 
 
@@ -527,11 +514,19 @@ namespace Comida_Feia
                 }
             }
             return MID;
-            
-        }       
+        }
+
         #endregion
-        
-       
+
+        private void Registo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
